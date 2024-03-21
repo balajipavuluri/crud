@@ -1,0 +1,58 @@
+
+
+{% block content %}
+
+<form action="/create"   method="POST">
+  {% csrf_token %}
+  <label for="name">First name:</label><br />
+  <input type="text" id="name" name="name" value="" /><br />
+  <label for="lname">Phone no:</label><br />
+  <input type="text" id="number" name="number" value="" /><br /><br />
+  <input type="submit" value="Submit" />
+</form>
+
+
+
+  </head>
+  <body>
+  
+  
+  <h1>Details : </h1>
+  <table border="1">
+    <tr>
+      <th>name</th>
+      <th>Contact</th>
+      <th colspan=2>todo</th>
+      
+    </tr>
+    {% for i in contactinfo %}
+    <tr>
+      <td>{{i.name}}</td>
+
+      <td>{{i.number}}</td>
+      <td> <a
+        type="button"
+        class="btn btn-primary"
+        href="/update/{{i.id}}""
+      >
+        edit   
+      </a>
+       </td>
+      <td>
+        <a
+          name=""
+          id=""
+          class="btn btn-danger"
+          href="/delete/{{i.id}}"
+          role="button"
+          > delete   </a
+        >
+        
+      </button>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+  
+
+{% endblock content %}

@@ -1,0 +1,9 @@
+<form action="" method="POST">
+  {% csrf_token %}
+  <label for="name">First name:</label><br />
+  <input type="text" id="name" name="name" value={{d.name}} /><br />
+  <label for="pno">Phone no:</label><br />
+  <input type="text" id="number" name="number" value={{d.number}} /><br /><br />
+  <input type="submit" value="Submit" />
+  
+</form>
